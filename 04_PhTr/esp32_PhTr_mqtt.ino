@@ -3,10 +3,12 @@
 
 const char gcc_SSID[] = "SSID";
 const char gcc_PASSWORD[] = "PASSWORD";
+const char * gcc_MQTT_BROKER_IP = "192.168.1.1";
+
 WiFiClient myWifiClient;
 const int NUM_PORT_MQTT = 1883;
 PubSubClient mqttClient(myWifiClient);
-const char * gcc_MQTT_BROKER_IP = "192.168.1.1";
+
 const char * gcc_MQTT_TOPIC = "IoT2019fy";
 const String gcst_MQTT_CLIENT_ID = "myMqttPub";
 

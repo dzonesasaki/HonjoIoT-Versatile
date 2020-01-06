@@ -1,0 +1,41 @@
+[
+    {
+        "id": "7545c29a.71c1ac",
+        "type": "inject",
+        "z": "307e4636.6da7c2",
+        "name": "inject",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 102.5,
+        "y": 158,
+        "wires": [
+            [
+                "2fbb1893.29217"
+            ]
+        ]
+    },
+    {
+        "id": "2fbb1893.29217",
+        "type": "http request",
+        "z": "307e4636.6da7c2",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "http://192.168.1.1/turn",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 281.5,
+        "y": 158,
+        "wires": [
+            []
+        ]
+    }
+]

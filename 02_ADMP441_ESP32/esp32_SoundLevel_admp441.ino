@@ -9,9 +9,9 @@
 
 // pin config
 #define PIN_I2S_BCLK 26
-#define PIN_I2S_LRC 22
+#define PIN_I2S_LRC 25
 #define PIN_I2S_DIN 34
-#define PIN_I2S_DOUT 25
+//#define PIN_I2S_DOUT 25
 
 // sampling info
 #define HZ_SAMPLE_RATE 44100

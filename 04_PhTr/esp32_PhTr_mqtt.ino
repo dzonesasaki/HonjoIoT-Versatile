@@ -14,7 +14,7 @@ const String gcst_MQTT_CLIENT_ID = "myMqttPub";
 
 
 #define PIN_READ 33
-#define FACT_IIR_ALPHA ((float)0.9)
+#define FACT_IIR_ALPHA ((float)0.99)
 #define FACT_IIR_BETA ((float)1-FACT_IIR_ALPHA)
 
 float gfValPrev;

@@ -1,7 +1,15 @@
 import wave
 import numpy as np
+import sys
 
-fnamel='dat01.txt' #change this file name
+#usage:
+#python3 txt2wav44k.py dat01.txt
+
+aryArg = sys.argv
+if len(aryArg) > 1:
+	fnamel = aryArg[1]
+else:
+	fnamel ='dat00.txt'
 
 fnames= fnamel[0:-3]+'wav'
 fs=44100

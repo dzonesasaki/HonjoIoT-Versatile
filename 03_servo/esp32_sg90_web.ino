@@ -1,6 +1,6 @@
 #include <ESP32Servo.h> // https://github.com/madhephaestus/ESP32Servo
 #include <WiFi.h>
-#include <ESP32WebServer.h>
+#include <WebServer.h>
 
 // ref to https://github.com/madhephaestus/ESP32Servo/blob/master/examples/Multiple-Servo-Example-Arduino/Multiple-Servo-Example-Arduino.ino
 // ref to example/SimpleWifiWerver.ino
@@ -22,7 +22,7 @@ Servo objServo01;
 
 int giAngleDeg = 0;      // position in degrees
 
-ESP32WebServer myWebServer(80);
+WebServer myWebServer(80);
 
 
 void init_WifiClient(void)

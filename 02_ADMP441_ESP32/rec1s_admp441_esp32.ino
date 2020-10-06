@@ -5,7 +5,7 @@
 // device : ADMP441 http://akizukidenshi.com/catalog/g/gK-06864/
 // ref to https://github.com/MhageGH/esp32_SoundRecorder
 
-#include "driver/i2s.h"
+#include "driver/i2s.h" //https://github.com/espressif/arduino-esp32/blob/master/tools/sdk/include/driver/driver/i2s.h
 
 // pin config
 #define PIN_I2S_BCLK 26

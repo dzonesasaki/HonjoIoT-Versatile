@@ -9,9 +9,12 @@
 
 // pin config
 #define PIN_I2S_BCLK 26
-#define PIN_I2S_LRC 25
+#define PIN_I2S_WS 25
 #define PIN_I2S_DIN 34
 //#define PIN_I2S_DOUT 25
+
+#define STATE_N_L_R_PULL_DOWN 1 //PullUp = 0, PullDown=1
+#define N_BYTE_STEP_LR (STATE_N_L_R_PULL_DOWN*4)
 
 // sampling info
 #define HZ_SAMPLE_RATE 44100
@@ -44,7 +47,7 @@ void I2S_Init(void) {
 
   i2s_pin_config_t pin_config;
   pin_config.bck_io_num = PIN_I2S_BCLK;
-  pin_config.ws_io_num = PIN_I2S_LRC;
+  pin_config.ws_io_num = PIN_I2S_WS;
   pin_config.data_out_num = I2S_PIN_NO_CHANGE;
   pin_config.data_in_num = PIN_I2S_DIN;
   i2s_set_pin(I2S_NUM_0, &pin_config);
@@ -66,7 +69,7 @@ void getData(){
     i2s_read_bytes(I2S_NUM_0, (char *)i8BufAll, N_LEN_BUF_ALL_BYTES, portMAX_DELAY);
 
     for (int i = 0; i < N_LEN_BUF_2BYTE ; i++) {
-      tmp32 = (i8BufAll[N_BYTES_STRACT_PAR_SAMPLE*i + 3] <<8) | i8BufAll[N_BYTES_STRACT_PAR_SAMPLE*i + 2];
+      tmp32 = (i8BufAll[N_BYTES_STRACT_PAR_SAMPLE*i + 3 +N_BYTE_STEP_LR] <<8) | i8BufAll[N_BYTES_STRACT_PAR_SAMPLE*i + 2 +N_BYTE_STEP_LR];
       strmData[i + N_LEN_BUF_2BYTE*j] = ( (tmp32>(1<<15)) ? tmp32-(1<<16) : tmp32 );
     } // i
   } // j
